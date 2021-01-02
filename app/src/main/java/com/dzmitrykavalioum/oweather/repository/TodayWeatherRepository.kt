@@ -38,6 +38,22 @@ class TodayWeatherRepository {
         return infoWeather
     }
 
+    fun getTodayWeatherByCity(city:String): MutableLiveData<InfoWeather>{
+        val call = RetrofitInstance.api.getTodayWeatherByCity(city, METRIC, APP_ID)
+
+        call.enqueue(object: Callback<InfoWeather>{
+            override fun onResponse(call: Call<InfoWeather>, response: Response<InfoWeather>) {
+                val data= response.body()
+                infoWeather.value = data
+            }
+
+            override fun onFailure(call: Call<InfoWeather>, t: Throwable) {
+                Log.v("TodayWeatherRepository ", t.message.toString())
+            }
+        })
+        return infoWeather
+    }
+
     fun getForecastWeatherByCity(): MutableLiveData<InfoWeatherV2>{
         val call = RetrofitInstance.api.getForecastByCity(EXAMPLE_CITY, METRIC, APP_ID)
 
@@ -55,4 +71,20 @@ class TodayWeatherRepository {
     }
 
 
+
+    fun getTodayWeatherByLocation(latitude:Double,longitude:Double): MutableLiveData<InfoWeather>{
+        val call = RetrofitInstance.api.getTodayWeatherByLatLon(latitude,longitude, METRIC, APP_ID)
+
+        call.enqueue(object: Callback<InfoWeather>{
+            override fun onResponse(call: Call<InfoWeather>, response: Response<InfoWeather>) {
+                val data= response.body()
+                infoWeather.value = data
+            }
+
+            override fun onFailure(call: Call<InfoWeather>, t: Throwable) {
+                Log.v("TodayWeatherRepository ", t.message.toString())
+            }
+        })
+        return infoWeather
+    }
 }
