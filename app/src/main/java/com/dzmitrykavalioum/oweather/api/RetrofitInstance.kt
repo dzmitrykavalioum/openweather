@@ -1,7 +1,7 @@
 package com.dzmitrykavalioum.oweather.api
 
 import com.dzmitrykavalioum.oweather.utils.Constants.Companion.BASE_URL
-import com.dzmitrykavalioum.weathapp.api.WeatherApiService
+import com.dzmitrykavalioum.weathapp.api.WeatherApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -23,8 +23,8 @@ object RetrofitInstance {
             .build()
     }
 
-    val api:WeatherApiService by lazy {
-        retrofit.create(WeatherApiService::class.java)
+    val api:WeatherApi by lazy {
+        retrofit.create(WeatherApi::class.java)
 
     }
 }

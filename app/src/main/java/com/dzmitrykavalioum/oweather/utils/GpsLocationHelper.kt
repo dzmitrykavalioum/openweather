@@ -85,7 +85,7 @@ class GpsLocationHelper {
     }
 
     fun getCityNameByLocation(context: Context, latitude: Double, longitude: Double): String {
-        var CityName: String = ""
+        var cityName: String = ""
         var geocoder: Geocoder = Geocoder(context, Locale.ENGLISH)
         var addesses: List<Address> = geocoder.getFromLocation(latitude, longitude, 1)
         if (addesses.size >= 0) {
@@ -94,7 +94,7 @@ class GpsLocationHelper {
             Log.d("GpsLocationHelper", "addresses is empty")
 
         }
-        return CityName
+        return cityName
     }
 
 }

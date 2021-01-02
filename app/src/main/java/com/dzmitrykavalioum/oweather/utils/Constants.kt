@@ -6,5 +6,6 @@ class Constants {
                 const val IMAGE_URL = "http://openweathermap.org/img/wn/"
                 const val APP_ID = "c6ba1e9a3f4945d723c9399b18a5dfda"
                 const val METRIC = "metric"
+                const val EXAMPLE_CITY = "minsk"
             }
 }
