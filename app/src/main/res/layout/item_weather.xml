@@ -23,7 +23,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/tv_item_date_time_n"
+            android:id="@+id/tvItemDateTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -36,7 +36,7 @@
 
 
         <TextView
-            android:id="@+id/tv_item_description_n"
+            android:id="@+id/tvItemDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -44,7 +44,7 @@
             android:text="Partly Cloudy"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_item_date_time_n" />
+            app:layout_constraintTop_toBottomOf="@+id/tvItemDateTime" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,17 +55,17 @@
             android:layout_marginTop="8dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_item_description_n">
+            app:layout_constraintTop_toBottomOf="@+id/tvItemDescription">
 
             <ImageView
-                android:id="@+id/iv_item_weather_n"
+                android:id="@+id/ivItemWeather"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_weight="40"
                 android:src="@drawable/ic_home_black_24dp" />
 
             <TextView
-                android:id="@+id/tv_item_temp_curr_n"
+                android:id="@+id/tvItemCurrTemp"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="16dp"
@@ -83,7 +83,7 @@
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/tv_item_temp_max_n"
+                    android:id="@+id/tvItemTempMax"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:gravity="center_horizontal|bottom"
@@ -93,7 +93,7 @@
                     android:textSize="18sp"
                     />
                 <TextView
-                    android:id="@+id/tv_item_temp_min_n"
+                    android:id="@+id/tvItemTempMin"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"

@@ -1,4 +1,4 @@
-package com.dzmitrykavalioum.oweather.ui.home
+package com.dzmitrykavalioum.oweather.ui.todayweather
 
 import InfoWeather
 import androidx.lifecycle.LiveData

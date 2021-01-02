@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/todayWeather">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.dzmitrykavalioum.oweather.ui.home.TodayWeatherFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/todayWeather"
+        android:name="com.dzmitrykavalioum.oweather.ui.todayweather.TodayWeatherFragment"
+        android:label="@string/title_today"
+        tools:layout="@layout/fragment_today_weather" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.dzmitrykavalioum.oweather.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigationForecast"
+        android:name="com.dzmitrykavalioum.oweather.ui.forecast.ForecastFragment"
+        android:label="@string/title_forecast"
+        tools:layout="@layout/fragment_forecast" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.dzmitrykavalioum.oweather.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:id="@+id/navigationWeatherLocation"
+        android:name="com.dzmitrykavalioum.oweather.ui.location.LocationFragment"
+        android:label="@string/title_weather_by_location"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

@@ -18,12 +18,12 @@ class WeatherAdapter(private val listItems: List<WeatherItem>) :
 //        val tv_description: TextView = itemView.findViewById(R.id.tv_item_description)
 //        val tv_temp: TextView = itemView.findViewById(R.id.tv_item_temp)
 //
-        val ivWeather: ImageView = itemView.findViewById(R.id.iv_item_weather_n)
-        val tvTime: TextView = itemView.findViewById(R.id.tv_item_date_time_n)
-        val tvDescription: TextView = itemView.findViewById(R.id.tv_item_description_n)
-        val tvTemp: TextView = itemView.findViewById(R.id.tv_item_temp_curr_n)
-        val tvTempMax: TextView = itemView.findViewById(R.id.tv_item_temp_max_n)
-        val tvTempMin: TextView = itemView.findViewById(R.id.tv_item_temp_min_n)
+        val ivWeather: ImageView = itemView.findViewById(R.id.ivItemWeather)
+        val tvTime: TextView = itemView.findViewById(R.id.tvItemDateTime)
+        val tvDescription: TextView = itemView.findViewById(R.id.tvItemDescription)
+        val tvTemp: TextView = itemView.findViewById(R.id.tvItemCurrTemp)
+        val tvTempMax: TextView = itemView.findViewById(R.id.tvItemTempMax)
+        val tvTempMin: TextView = itemView.findViewById(R.id.tvItemTempMin)
 
 
     }
@@ -31,7 +31,7 @@ class WeatherAdapter(private val listItems: List<WeatherItem>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeatherViewHolder {
         val itemView =
             //LayoutInflater.from(parent.context).inflate(R.layout.item_weather, parent, false)
-            LayoutInflater.from(parent.context).inflate(R.layout.item_wether, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_weather, parent, false)
 
         return WeatherViewHolder(itemView)
     }
