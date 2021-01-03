@@ -12,6 +12,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.dzmitrykavalioum.oweather.R
 import com.dzmitrykavalioum.oweather.utils.Constants
+import com.dzmitrykavalioum.oweather.utils.Constants.Companion.CORRECTION
+import com.dzmitrykavalioum.oweather.utils.Constants.Companion.DEFAULT_LATITUDE
+import com.dzmitrykavalioum.oweather.utils.Constants.Companion.DEFAULT_LONGITUDE
+import com.dzmitrykavalioum.oweather.utils.Constants.Companion.LAT_KEY
+import com.dzmitrykavalioum.oweather.utils.Constants.Companion.LON_KEY
 import com.dzmitrykavalioum.oweather.utils.GpsLocationHelper
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_today_weather.*
@@ -35,12 +40,12 @@ class LocationFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_today_weather, container, false)
 
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
-        val defaultValue:Long = 0
 
-        city = sharedPref?.getString("CITY_KEY", Constants.EXAMPLE_CITY)
 
-        Log.d("MainActivity_", city)
-        locationViewModel.getTodayWeatherByLoc(city!!)
+        latitude = ((sharedPref?.getLong(LAT_KEY, DEFAULT_LATITUDE))?.toDouble())?.div(CORRECTION)
+        longitude = ((sharedPref?.getLong(LON_KEY, DEFAULT_LONGITUDE))?.toDouble())?.div(CORRECTION)
+         Log.d("MainActivity_", latitude.toString()+"\t"+longitude.toString())
+        locationViewModel.getTodayWeatherByLoc(latitude!!,longitude!!)
             ?.observe(viewLifecycleOwner, Observer { infoWeather ->
                 tvCity.text = infoWeather.name
                 tvTemp.text = infoWeather.main.temp.toString() + "°"

@@ -14,9 +14,15 @@ class LocationViewModel(application: Application) : AndroidViewModel(application
 
     var infoWeatherLiveData: MutableLiveData<InfoWeather>? = null
 
-    fun getTodayWeatherByLoc(city:String) : LiveData<InfoWeather>?{
+    fun getTodayWeatherByCity(city:String) : LiveData<InfoWeather>?{
         infoWeatherLiveData = TodayWeatherRepository()
             .getTodayWeatherByCity(city)
+        return infoWeatherLiveData
+    }
+
+    fun getTodayWeatherByLoc(latitude:Double, longitude:Double) : LiveData<InfoWeather>?{
+        infoWeatherLiveData = TodayWeatherRepository()
+            .getTodayWeatherByLocation(latitude,longitude)
         return infoWeatherLiveData
     }
 

@@ -12,6 +12,10 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.dzmitrykavalioum.oweather.utils.Constants
+import com.dzmitrykavalioum.oweather.utils.Constants.Companion.CORRECTION
+import com.dzmitrykavalioum.oweather.utils.Constants.Companion.LAT_KEY
+import com.dzmitrykavalioum.oweather.utils.Constants.Companion.LON_KEY
 import com.dzmitrykavalioum.oweather.utils.GpsLocationHelper
 import java.util.*
 
@@ -39,7 +43,8 @@ class MainActivity : AppCompatActivity() {
                 if (addesses.size >= 0) {
                     val sharedPref = getPreferences(Context.MODE_PRIVATE) ?: return
                     with (sharedPref.edit()) {
-                        putString("CITY_KEY",addesses.get(0).locality)
+                        putLong(LAT_KEY, (location.latitude* CORRECTION).toLong())
+                        putLong(LON_KEY, (location.longitude* CORRECTION).toLong())
                         apply()
                     }
                     Log.d("MainActivity", addesses.get(0).locality)
